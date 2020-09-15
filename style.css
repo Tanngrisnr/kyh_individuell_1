@@ -73,7 +73,7 @@ article img {
   height: auto;
 }
 
-article form {
+form {
   padding: 2%;
   margin: 3%;
   display: flex;
