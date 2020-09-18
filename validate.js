@@ -2,13 +2,14 @@
 
 //initialize global variables
 let message = document.getElementById("message");
-let inputs = document.forms.contactForm.elements;
+let inputs = document.getElementsByClassName("text-input");
 //Validate that all inputs have been filled with the correct data
 function validateForm() {
   //select form inputs
   for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === "") {
+    if (inputs[i].value === "" || inputs[i].value === null) {
       message.textContent = `there are empty input fields`;
+
       return false;
     } else {
       message.textContent = `ready to roll`;
