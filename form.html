@@ -22,17 +22,28 @@
         <article>
             <h2>Form</h2>
             <!--form calling validateForm function on submit-->
-            <form id="contact-form" name="contactForm" onsubmit="return validateForm()" action="">
+            <form novalidate id="contact-form" name="contactForm" action="">
 
-                <div class="inputField"><label for="contactName">Name</label>
-                    <input class='text-input' id='contactName' name="contactName" type="text"></div>
-                <div class="inputField"><label for="subject">Subject</label>
-                    <input class='text-input' id="subject" name="subject" type="text"></div>
-                <div class="inputField"><label for="email">Email</label>
-                    <input class='text-input' id='email' name="email" type="text"></div>
+                <label for="contactName">
+                    <span>Name:</span>
+                    <input id='contactName' name="contactName" type="text" minLength='5' placeholder="Full name"
+                        required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="subject">
+                    <span>Subject:</span>
+                    <input id="subject" name="subject" type="text" minlength="30" placeholder="Subject description"
+                        required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="email">
+                    <span>Email:</span>
+                    <input id='email' name="email" minlength="10" type="email" placeholder="email adress" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
 
 
-                <input type="submit" value="submit">
+                <button>Submit</button>
             </form>
             <span id='message'></span>
         </article>
