@@ -90,39 +90,41 @@ form {
   flex-direction: column;
   justify-content: space-between;
 }
+
 label {
   margin: 1.5%;
   width: 100%;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
+
 input {
-  -webkit-appearance: none;
-  appearance: none;
-
-  width: 100%;
-  border: 1px solid #333;
-  margin: 0;
-
+  line-height: 2em;
+  text-align: center;
+  width: 25%;
+  margin: 2% 0 auto;
   font-family: inherit;
   font-size: 90%;
   box-sizing: border-box;
+  transition: width 0.3s;
+}
+
+input:invalid {
 }
 
 input:focus:invalid {
   outline: none;
-  border-color: #900;
-  background-color: #fdd;
+  width: 100%;
 }
 .error {
-  width: 100%;
+  width: 25%;
   padding: 0;
   font-size: 80%;
   color: white;
   background-color: #900;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 0.5vw 0.5vw;
   box-sizing: border-box;
   transition: 0.3s;
 }

@@ -25,20 +25,20 @@
             <form novalidate id="contact-form" name="contactForm" action="">
 
                 <label for="contactName">
-                    <span>Full name:</span>
-                    <input id='contactName' name="contactName" type="text" minLength='2' placeholder="Full name"
-                        required>
-                    <span class="error" aria-live="polite"></span>
-                </label>
-                <label for="subject">
-                    <span>Subject:</span>
-                    <input id="subject" name="subject" type="text" minlength="30" placeholder="Subject description"
+
+                    <input id='contactName' name="contactName" type="text" minLength='3' placeholder="Full name"
                         required>
                     <span class="error" aria-live="polite"></span>
                 </label>
                 <label for="email">
-                    <span>Email:</span>
-                    <input id='email' name="email" minlength="10" type="email" placeholder="email adress" required>
+
+                    <input id='email' name="email" minlength="10" type="email" placeholder="Email adress" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="subject">
+
+                    <input id="subject" name="subject" type="text" minlength="30" placeholder="Subject description"
+                        required>
                     <span class="error" aria-live="polite"></span>
                 </label>
 
