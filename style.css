@@ -111,11 +111,11 @@ input {
   transition: width 0.3s;
 }
 
-input:invalid {
-}
-
 input:focus:invalid {
   outline: none;
+  width: 100%;
+}
+input:focus + .error {
   width: 100%;
 }
 .error {
