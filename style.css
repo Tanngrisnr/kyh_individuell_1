@@ -132,3 +132,29 @@ input:focus + .error {
 .error.active {
   padding: 0.3em;
 }
+
+.contact-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.checkbox {
+  padding: 0;
+  margin: 0;
+  width: 4%;
+}
+.item {
+  font-size: 1rem;
+  padding: 2%;
+}
+.item:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.item:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
