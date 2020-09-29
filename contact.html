@@ -14,17 +14,49 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="canvas.html">Canvas</a>
-            <a href="form.html">Form</a>
             <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
     <main class="container">
         <article>
-            <h2>Contact info</h2>
+            <h2>Form</h2>
+            <!--form calling validateForm function on submit-->
+            <form id="contact-form" name="contactForm" action="">
+
+                <label for="contactName">
+
+                    <input id='contactName' name="contactName" type="text" minLength='3' placeholder="Full name"
+                        required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="email">
+
+                    <input id='email' name="email" minlength="10" type="email" placeholder="Email adress" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+                <label for="subject">
+
+                    <input id="subject" name="subject" type="text" minlength="15" placeholder="Subject description"
+                        required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+
+
+                <button type="submit">Submit</button>
+            </form>
+            <span id='completion'></span>
         </article>
+        <article>
+            <h2>Contacts</h2>
+            <ul id="contact-list">
+
+            </ul>
+        </article>
+
     </main>
     <footer></footer>
-
+    <script src="forms.js"></script>
 </body>
 
 </html>

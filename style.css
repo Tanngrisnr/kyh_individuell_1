@@ -133,19 +133,15 @@ input:focus + .error {
   padding: 0.3em;
 }
 
-.contact-list {
+#contact-list {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-.checkbox {
-  padding: 0;
-  margin: 0;
-  width: 4%;
-}
 .item {
+  line-height: 1.5rem;
   font-size: 1rem;
   padding: 2%;
 }

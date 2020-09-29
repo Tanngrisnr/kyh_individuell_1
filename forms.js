@@ -3,14 +3,14 @@
 
 //initialize global variables
 const form = document.getElementsByTagName("form")[0];
-const cname = document.querySelector("#contactName");
-const subject = document.querySelector("#subject");
-const email = document.querySelector("#email");
+const cname = document.getElementById("contactName");
+const subject = document.getElementById("subject");
+const email = document.getElementById("email");
+const completion = document.getElementById("completion");
 const inputs = document.querySelectorAll("input");
-const cList = document.querySelector(".contact-list");
+const cList = document.getElementById("contact-list");
 //list of items for contact list
 let contacts = [];
-
 // using a forEach loop to start regestering the different input elements
 inputs.forEach((input) => {
   // Uses nextElementSibling to find the error-message <span> which is a sibling of each input
@@ -59,8 +59,11 @@ form.addEventListener("submit", function (event) {
   } else if (!email.validity.valid) {
     // If it isn't, we display an appropriate error message
     showError(email);
-    // Then we prevent the form from being sent by canceling the event
   }
+  getInputValues(event);
+  form.reset();
+  form.style.display = "none";
+  completion.textContent = "thank you for your submission.";
 });
 
 // Semi-universal showError function
@@ -87,133 +90,55 @@ function showError(field) {
   error.className = "error active";
 }
 
-//https://thecodingpie.com/post/how-to-build-a-todo-list-app-with-javascript-and-local-storage/
-//handling submit and creating a list
-// add an eventListener on form, and listen for submit event
-form.addEventListener("submit", function (event) {
-  // prevent the page from reloading when submitting the form
+function getInputValues(event) {
   event.preventDefault();
-  addContact(cname.value, email.value, subject.value); // call addTodo function with input box current value
-  //clear input values
-  inputs.value = "";
-});
-
-// function to add todo
-function addContact(n, e, s) {
-  // if item is not empty
-  let arr = [n, e, s];
-
-  for (let i = 0; i < arr.length; i++) {
-    if (arr.value !== "") {
-      // make a todo object, which has id, name, and completed properties
-      const listItem = {
-        id: Date.now(),
-        name: n,
-        email: e,
-        subject: s,
-        completed: false,
-      };
-      contacts.push(listItem);
-      arr.value = "";
-    }
-
-    // then add it to todos array
-    //addToLocalStorage(contacts); // then renders them between <ul>
-  }
+  let values = [];
+  inputs.forEach((input) => {
+    values.push(input.value);
+  });
+  createContact(values);
 }
-// function to render given todos to screen
-function renderContacts(contacts) {
-  // clear everything inside <ul> with class=todo-items
+
+function createContact(arr) {
+  const contact = {
+    id: Date.now(),
+    name: arr[0],
+    email: arr[1],
+    subject: arr[2],
+  };
+  contacts.push(contact);
+  addToLocalStorage(contacts);
+}
+
+function renderContacts(items) {
   cList.innerHTML = "";
 
-  // run through each item inside todos
-  contacts.forEach(function (item) {
-    // check if the item is completed
-    const checked = item.completed ? "checked" : null;
-
-    // make a <li> element and fill it
-    // <li> </li>
+  items.forEach((item) => {
     const li = document.createElement("li");
-    // <li class="item"> </li>
+
     li.setAttribute("class", "item");
-    // <li class="item" data-key="20200708"> </li>
     li.setAttribute("data-key", item.id);
-    /* <li class="item" data-key="20200708"> 
-            <input type="checkbox" class="checkbox">
-            Go to Gym
-            <button class="delete-button">X</button>
-          </li> */
-    // if item is completed, then add a class to <li> called 'checked', which will add line-through style
-    if (item.completed === true) {
-      li.classList.add("checked");
-    }
 
     li.innerHTML = `
-        <input type="checkbox" class="checkbox" ${checked}> <br>
-        ${item.name}<br>
-        ${item.email}<br>
-        ${item.subject}
-        <button class="delete-button">X</button>
-      `;
-    // finally add the <li> to the <ul>
+    ${item.name}<br>
+    ${item.email}<br>
+    ${item.subject}
+    `;
+    console.log(items);
     cList.append(li);
   });
 }
-function addToLocalStorage(contacts) {
-  localStorage.setItem("contacts", JSON.stringify(contacts));
 
+function addToLocalStorage(arr) {
+  localStorage.setItem("contacts", JSON.stringify(arr));
   renderContacts(contacts);
 }
-// function helps to get everything from local storage
 function getFromLocalStorage() {
   const reference = localStorage.getItem("contacts");
-  // if reference exists
+
   if (reference) {
-    // converts back to array and store it in todos array
     contacts = JSON.parse(reference);
     renderContacts(contacts);
   }
 }
-
-// toggle the value to completed and not completed
-function toggle(id) {
-  contacts.forEach(function (item) {
-    // use == not ===, because here types are different. One is number and other is string
-    if (item.id == id) {
-      // toggle the value
-      item.completed = !item.completed;
-    }
-  });
-
-  addToLocalStorage(contacts);
-}
-
-// deletes a todo from todos array, then updates localstorage and renders updated list to screen
-function deleteContact(id) {
-  // filters out the <li> with the id and updates the todos array
-  contacts = contacts.filter(function (item) {
-    // use != not !==, because here types are different. One is number and other is string
-    return item.id != id;
-  });
-
-  // update the localStorage
-  addToLocalStorage(contacts);
-}
-
-// initially get everything from localStorage
 getFromLocalStorage();
-
-// after that addEventListener <ul> with class=todoItems. Because we need to listen for click event in all delete-button and checkbox
-cList.addEventListener("click", function (event) {
-  // check if the event is on checkbox
-  if (event.target.type === "checkbox") {
-    // toggle the state
-    toggle(event.target.parentElement.getAttribute("data-key"));
-  }
-
-  // check if that is a delete-button
-  if (event.target.classList.contains("delete-button")) {
-    // get id from data-key attribute's value of parent <li> where the delete-button is present
-    deleteContact(event.target.parentElement.getAttribute("data-key"));
-  }
-});
