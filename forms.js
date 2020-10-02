@@ -1,5 +1,6 @@
 //https://www.w3schools.com/js/js_validation.asp form validation source/inspiration
-//https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation further source/inspiration
+//https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation further source/inspiration for validation
+//https://thecodingpie.com/post/how-to-build-a-todo-list-app-with-javascript-and-local-storage/ source/inspiration for contact list
 
 //initialize global variables
 const form = document.getElementsByTagName("form")[0];
@@ -60,7 +61,7 @@ form.addEventListener("submit", function (event) {
     // If it isn't, we display an appropriate error message
     showError(email);
   }
-  getInputValues(event);
+  getInputValues();
   form.reset();
   form.style.display = "none";
   completion.textContent = "thank you for your submission.";
@@ -90,8 +91,7 @@ function showError(field) {
   error.className = "error active";
 }
 
-function getInputValues(event) {
-  event.preventDefault();
+function getInputValues() {
   let values = [];
   inputs.forEach((input) => {
     values.push(input.value);
@@ -120,9 +120,9 @@ function renderContacts(items) {
     li.setAttribute("data-key", item.id);
 
     li.innerHTML = `
-    ${item.name}<br>
-    ${item.email}<br>
-    ${item.subject}
+    Name: ${item.name}<br>
+    Email: ${item.email}<br>
+    Subject: ${item.subject}
     `;
     console.log(items);
     cList.append(li);
