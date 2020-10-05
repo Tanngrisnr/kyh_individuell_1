@@ -123,29 +123,20 @@ nav label {
 .menu a:nth-child(1) {
   background: var(--naples-yellow);
 }
-.menu a:nth-child(1):hover {
-  /* background: #e8c110; */
-  flex-grow: 2;
-}
+
 .menu a:nth-child(2) {
   background: var(--mango-tango);
 }
-.menu a:nth-child(2):hover {
-  /* background: #d55b14; */
-  flex-grow: 2;
-}
+
 .menu a:nth-child(3) {
   background: var(--rose-madder);
 }
-.menu a:nth-child(3):hover {
-  /* background: #ad1d29; */
-  flex-grow: 2;
-}
+
 .menu a:nth-child(4) {
   background: var(--maroon-X11);
 }
-.menu a:nth-child(4):hover {
-  /* background: #842845; */
+
+.menu a:hover {
   flex-grow: 2;
 }
 
