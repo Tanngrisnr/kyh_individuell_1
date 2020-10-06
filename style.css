@@ -11,32 +11,46 @@
   --dim-gray: #756c67;
 }
 
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
   font-family: "Roboto Condensed", sans-serif;
-  display: block;
-  margin: 0;
   background-color: var(--floral-white);
   color: var(--dim-gray);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  font-family: "Teko", sans-serif;
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  background: var(--papaya-whip);
 }
 
 header h1 {
-  font-family: "Teko", sans-serif;
   margin: 5% auto;
   text-align: center;
-  font-size: 8rem;
+  font-size: 10vmax;
   /* font-weight: 900; */
   padding: 5%;
-  transform: skew(-20deg, -5deg);
+  transform: skew(-20deg, -10deg);
 }
 h1 a {
   text-decoration: none;
@@ -51,15 +65,18 @@ h1 a:hover {
 /* navigation burger css https://www.cssscript.com/css-flexbox-based-responsive-navigation/ */
 nav {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
+  transform: skewY(-10deg);
+  overflow: hidden;
 }
 
 nav label {
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -72,20 +89,24 @@ nav label {
 .toggle {
   display: block;
   text-align: center;
-  line-height: 4rem;
+  line-height: 4vmax;
   cursor: pointer;
   width: 100%;
-  font-size: 2rem;
-  height: 4%;
+  font-size: 2vmax;
+  height: 4vmax;
   color: white;
   background: var(--dark-byzantium);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   transition: all 0.1s linear;
 }
-.toggle:hover {
-  background: var(--naples-yellow);
+
+/*https://medium.com/@djpjgj/css-magic-pt-1-prevent-css-hover-on-touch-devices-56b3f8a44240 prevents sticky :hover effects*/
+@media not all and (pointer: coarse) {
+  .toggle:hover {
+    background: var(--floral-white);
+    color: var(--dark-byzantium);
+  }
 }
+
 #checkbox1:checked + label .menu a {
   opacity: 1;
   visibility: visible;
@@ -97,13 +118,11 @@ nav label {
 }
 .menu {
   border-radius: 0;
-  border-top-left-radius: 0.5vw;
-  border-top-right-radius: 0.5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 0px;
+  height: 0;
   transition: height 0.3s linear;
   width: 100%;
 }
@@ -112,6 +131,7 @@ nav label {
   text-align: center;
   align-self: center;
   flex-grow: 1;
+  font-size: 1.5vmax;
   margin: 0;
   padding: 0.4vw 1vh;
   width: 100%;
@@ -146,6 +166,8 @@ main {
   width: 80vw;
   height: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 article {
   padding: 2%;
