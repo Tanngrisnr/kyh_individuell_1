@@ -8,7 +8,7 @@ const cname = document.getElementById("contactName");
 const subject = document.getElementById("subject");
 const email = document.getElementById("email");
 const completion = document.getElementById("completion");
-const inputs = document.querySelectorAll("input");
+const inputs = document.querySelectorAll("form input");
 const cList = document.getElementById("contact-list");
 //list of items for contact list
 let contacts = [];

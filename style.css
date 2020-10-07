@@ -33,6 +33,7 @@ body {
 h1,
 h2 {
   font-family: "Teko", sans-serif;
+  transform: skew(-20deg, -10deg);
 }
 
 header {
@@ -50,7 +51,6 @@ header h1 {
   font-size: 10vmax;
   /* font-weight: 900; */
   padding: 5%;
-  transform: skew(-20deg, -10deg);
 }
 h1 a {
   text-decoration: none;
@@ -102,8 +102,7 @@ nav label {
 /*https://medium.com/@djpjgj/css-magic-pt-1-prevent-css-hover-on-touch-devices-56b3f8a44240 prevents sticky :hover effects*/
 @media not all and (pointer: coarse) {
   .toggle:hover {
-    background: var(--floral-white);
-    color: var(--dark-byzantium);
+    background: #88426d;
   }
 }
 
@@ -172,7 +171,7 @@ main {
 article {
   padding: 2%;
   margin: 3% auto;
-  flex-basis: 80%;
+  min-width: 80%;
   border-radius: 0 0 3vw 0;
   box-shadow: 0.4vh 0.4vw var(--maroon-X11);
   align-self: center;
@@ -187,6 +186,7 @@ article h2 {
   text-align: center;
   min-width: 100%;
   flex-shrink: 0;
+  font-size: 4vmax;
 }
 article figure {
   flex-grow: 1;
