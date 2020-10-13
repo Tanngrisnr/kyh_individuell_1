@@ -120,9 +120,11 @@ function renderContacts(items) {
     li.setAttribute("data-key", item.id);
 
     li.innerHTML = `
-    Name: ${item.name}<br>
-    Email: ${item.email}<br>
-    Subject: ${item.subject}
+    <ul class="nested">
+    <li>Name: ${item.name}</li>
+    <li>Email: ${item.email}</li>
+    <li>Subject: ${item.subject}</li>
+    </ul>
     `;
     console.log(items);
     cList.append(li);
