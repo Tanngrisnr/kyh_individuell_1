@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A contact form page using javascript.">
-    <link rel="icon" href="vhsfavicon.svg" type="image">
+    <link rel="shortcut icon" href="vhsfavicon.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="a11y.js" defer></script>
     <script src="forms.js" defer></script>
-    <title>Document</title>
+
 </head>
 
 <body>
@@ -25,7 +25,7 @@
             <label for="checkbox1">
                 <span role="menu" class="menu">
                     <a role="menuitem" href="index.html">HOME</a>
-                    <a role="menuitem" href="canvas.html">CANVAS</a>
+                    <a role="menuitem" href="style.html">STYLE</a>
                     <a role="menuitem" href="contact.html">CONTACT</a>
                     <a role="menuitem" href="about.html">ABOUT</a>
                 </span>
@@ -38,7 +38,7 @@
         <article>
             <h2>Form</h2>
             <!--form calling validateForm function on submit-->
-            <form id="contact-form" name="contactForm" action="">
+            <form id="contact-form" name="contactForm">
 
                 <label for="contactName">
 
@@ -58,20 +58,19 @@
                     <span class="error" aria-live="polite"></span>
                 </label>
 
-
-                <button type="submit">Submit</button>
+                <span class="button-span"><button type="submit">Submit</button></span>
             </form>
             <span id='completion'></span>
         </article>
         <article>
             <h2>Contacts</h2>
-            <ul id="contact-list">
-
-            </ul>
+            <div class="list-container">
+                <ul id="contact-list"></ul>
+            </div>
         </article>
 
     </main>
-    <footer></footer>
+
 
 </body>
 

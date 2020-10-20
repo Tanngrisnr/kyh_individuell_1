@@ -6,14 +6,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A page with a presentation of the author and a description of the page's layout.">
-    <link rel="icon" href="vhsfavicon.svg" type="image">
+    <link rel="shortcut icon" href="vhsfavicon.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="a11y.js" defer></script>
-    <title>Document</title>
+
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <label for="checkbox1">
                 <span role="menu" class="menu">
                     <a role="menuitem" href="index.html">HOME</a>
-                    <a role="menuitem" href="canvas.html">CANVAS</a>
+                    <a role="menuitem" href="style.html">STYLE</a>
                     <a role="menuitem" href="contact.html">CONTACT</a>
                     <a role="menuitem" href="about.html">ABOUT</a>
                 </span>
@@ -35,29 +35,25 @@
     <main class="container">
         <h2>About</h2>
         <article>
-            <h2>Style</h2>
-            <figure><img src="cassettecollage.png"
-                    alt="an image of a the box to a blank cassette tape, the top of the tape has a skewed typography with the word Rainbow and across the middle of the packaging there are five stripes going from yellow to orange, to red, to marroon, to purple.">
-            </figure>
-            <p>The visual design of this website was in large part inspired by this blank video cassette tape, from it I
-                extracted most of the colors used in this website, lightening the cream color to better fit as a
-                bakground color and making minor alterations to the grey. Making use of the skew-property of the CSS
-                transform-property the website typography and layout is transformed as inspired by the text and imagery
-                of the cassette tape cover.
-
-                The CSS is built to be response making use of no absolute values when it comes to measurments of the
-                site and instead relying on relative measurements based on widht of parent element and viewport
-                height/width to govern the size of html elements. The site navigation utilzes both relative size and
-                skewing to achieve an apperance similar to the rainbow present on the inspiration image as well as
-                animations to act as a dynamic menu.
-            </p>
-        </article>
-        <article>
             <h2>Designer</h2>
-            <p></p>
+            <div class="socials">
+                <a class='git' href="https://github.com/Tanngrisnr">Github</a>
+                <a class='linkd' href="https://www.linkedin.com/in/fredrik-wintzell-3689411b4/">Linkedin</a>
+                <a class='insta' href="https://www.instagram.com/tanngrisnr/">Instagram</a>
+                <a class='kyh' href="https://kyh.se/">KYH</a>
+                <a class='sh' href="https://www.sh.se/">Södertörns högskola</a>
+            </div>
+            <figure><img src="designer.JPG"
+                    alt="A white light brunette person crouching down against a red metal wall. Wearing a blue checkered shirt and brown pants.">
+            </figure>
+            <p>
+                Fredrik Wintzell is a Front-end developer and UX-designer currently studying web development with focus
+                on front-end at KYH in Stockholm Sweden.
+            </p>
+
         </article>
     </main>
-    <footer></footer>
+
 
 </body>
 

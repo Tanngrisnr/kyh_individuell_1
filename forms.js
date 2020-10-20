@@ -64,7 +64,7 @@ form.addEventListener("submit", function (event) {
   getInputValues();
   form.reset();
   form.style.display = "none";
-  completion.textContent = "thank you for your submission.";
+  completion.textContent = "thank you for your submission";
 });
 
 // Semi-universal showError function
