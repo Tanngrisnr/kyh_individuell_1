@@ -210,7 +210,7 @@ article {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-
+  align-items: center;
   transform: skewY(-10deg);
 }
 
@@ -227,9 +227,9 @@ article > h2 {
   font-size: 5vmax;
 }
 article figure {
-  flex-grow: 1;
+  flex-grow: 2;
   flex-basis: 0;
-  margin: 0;
+  margin: 5%;
   padding: 3%;
   align-self: center;
 }
@@ -250,16 +250,16 @@ article p {
 .socials {
   flex-grow: 1;
   flex-basis: 0;
-  width: 100%;
-  margin: 0;
-  padding: 5%;
+  margin: 5%;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
 .socials a {
-  vertical-align: middle;
+  margin: 0;
+  padding: 3%;
   flex-basis: 0;
   flex-grow: 1;
   text-decoration: none;
@@ -294,7 +294,7 @@ article p {
   background-color: var(--dark-byzantium);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   article {
     flex-direction: column;
   }
