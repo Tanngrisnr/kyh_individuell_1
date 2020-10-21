@@ -214,6 +214,12 @@ article {
   transform: skewY(-10deg);
 }
 
+@media only screen and (max-width: 1000px) {
+  article {
+    flex-direction: column;
+  }
+}
+
 article > * {
   transform: skewY(10deg);
 }
@@ -239,6 +245,7 @@ article img {
   height: auto;
   margin: 0;
   padding: 0;
+  border-radius: 50%;
 }
 article p {
   flex-grow: 1;
@@ -257,11 +264,10 @@ article p {
   flex-direction: column;
 }
 
-.socials a {
+.socLink {
   margin: 0;
   padding: 3%;
-  flex-basis: 0;
-  flex-grow: 1;
+  width: 100%;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
@@ -269,35 +275,24 @@ article p {
   transition: 0.5s;
 }
 
-.socials a:hover,
-.socials a:focus {
-  flex-grow: 2;
-}
-.socials a:hover + desc,
-.socials a:focus + desc {
-  visibility: visible;
-}
-
-.socials a:nth-child(1) {
+.socLink:nth-child(1) {
   background-color: var(--naples-yellow);
 }
-.socials a:nth-child(2) {
+.socLink:nth-child(2) {
   background-color: var(--mango-tango);
 }
-.socials a:nth-child(3) {
+.socLink:nth-child(3) {
   background-color: var(--rose-madder);
 }
-.socials a:nth-child(4) {
+.socLink:nth-child(4) {
   background-color: var(--maroon-X11);
 }
-.socials a:nth-child(5) {
+.socLink:nth-child(5) {
   background-color: var(--dark-byzantium);
 }
 
-@media only screen and (max-width: 1000px) {
-  article {
-    flex-direction: column;
-  }
+.socLink:hover {
+  background-color: var(--dim-gray);
 }
 
 form {
